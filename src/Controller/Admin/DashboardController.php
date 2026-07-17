@@ -15,6 +15,7 @@ use App\Controller\Admin\ImageCrudController;
 use App\Controller\Admin\DevisCrudController;
 use App\Controller\Admin\PrestationsCrudController;
 use App\Controller\Admin\MessageCrudController;
+use App\Controller\TextController;
 
 
 
@@ -78,6 +79,7 @@ yield MenuItem::linkTo(MessageCrudController::class, 'Message', 'fas fa-users');
 yield MenuItem::linkTo(PrestationsCrudController::class, 'Prestations', 'fas fa-users');
 yield MenuItem::linkTo(ImageCrudController::class, 'Image', 'fas fa-users');
 yield MenuItem::linkTo(AdminCrudController::class, 'Admin', 'fas fa-users');
+yield MenuItem::linkTo(TextCrudController::class, 'Text', 'fas fa-users');
 
 
      

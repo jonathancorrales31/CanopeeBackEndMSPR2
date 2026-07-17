@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: DevisRepository::class)]
+#[ApiResource]
 class Devis
 {
     #[ORM\Id]
@@ -30,7 +32,7 @@ class Devis
 
     #[ORM\ManyToOne(inversedBy: 'devis')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?clients $client = null;
+    private ?Clients $client = null;
 
     /**
      * @var Collection<int, DevisPrestation>
@@ -96,12 +98,12 @@ class Devis
         return $this;
     }
 
-    public function getClient(): ?clients
+    public function getClient(): ?Clients
     {
         return $this->client;
     }
 
-    public function setClient(?clients $client): static
+    public function setClient(?Clients $client): static
     {
         $this->client = $client;
 

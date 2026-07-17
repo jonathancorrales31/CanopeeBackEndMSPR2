@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\MessageRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
+#[ApiResource]
 class Message
 {
     #[ORM\Id]
@@ -24,7 +26,7 @@ class Message
     private ?string $contenu = null;
 
     #[ORM\OneToOne(inversedBy: 'message', cascade: ['persist', 'remove'])]
-    private ?clients $client = null;
+    private ?Clients $client = null;
 
     public function getId(): ?int
     {
@@ -67,12 +69,12 @@ class Message
         return $this;
     }
 
-    public function getClient(): ?clients
+    public function getClient(): ?Clients
     {
         return $this->client;
     }
 
-    public function setClient(?clients $client): static
+    public function setClient(?Clients $client): static
     {
         $this->client = $client;
 

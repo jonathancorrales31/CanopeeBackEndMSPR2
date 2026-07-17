@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Text{% endblock %}
+
+{% block body %}
+    <h1>Text</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ text.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ text.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ text.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_text_index') }}">back to list</a>
+
+    <a href="{{ path('app_text_edit', {'id': text.id}) }}">edit</a>
+
+    {{ include('text/_delete_form.html.twig') }}
+{% endblock %}

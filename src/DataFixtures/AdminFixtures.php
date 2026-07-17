@@ -17,13 +17,23 @@ class AdminFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $admin = new Admin();
-        $admin->setEmail('admin@example.com');
-        $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword(
-            $this->passwordHasher->hashPassword($admin, 'admin123')
+
+        $admin->setPrenom('Admin');
+        $admin->setNom('Demo');
+        $admin->setTelephone('0600000000');
+        $admin->setAdresse('Adresse de démonstration');
+        $admin->setEmail('admin2@canopee.fr');
+
+        $password = $this->passwordHasher->hashPassword(
+            $admin,
+            'admin'
         );
 
+        $admin->setPassword($password);
+        $admin->setRoles(['ROLE_ADMIN']);
+
         $manager->persist($admin);
+
         $manager->flush();
     }
 }

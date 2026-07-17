@@ -26,7 +26,7 @@ class ImageCrudController extends AbstractCrudController
     yield IntegerField::new('ordreAffichage');
 
     yield AssociationField::new('prestation')
-        ->setRequired(true)
+        ->setRequired(false)
         ->autocomplete();
     }
 }
