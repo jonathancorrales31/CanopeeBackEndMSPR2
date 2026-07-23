@@ -15,7 +15,7 @@ use App\Controller\Admin\ImageCrudController;
 use App\Controller\Admin\DevisCrudController;
 use App\Controller\Admin\PrestationsCrudController;
 use App\Controller\Admin\MessageCrudController;
-use App\Controller\TextController;
+use App\Controller\Admin\TextCrudController;
 
 
 
